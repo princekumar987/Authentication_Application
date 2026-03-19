@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65397cd1-be36-4d43-9e94-c9238d10b199" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/config/ProjectConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/dtos/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/exceptions/GlobalExceptionHandlers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/exceptions/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/helpers/Userhelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/controllers/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/services/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/services/Impl/AuthServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/dtos/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/dtos/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/services/Impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>

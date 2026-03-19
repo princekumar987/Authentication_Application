@@ -1,4 +1,4 @@
-package com.prince.auth_app.services;
+package com.prince.auth_app.services.Impl;
 
 import com.prince.auth_app.dtos.UserDto;
 import com.prince.auth_app.entities.Provider;
@@ -6,6 +6,7 @@ import com.prince.auth_app.entities.User;
 import com.prince.auth_app.exceptions.ResourceNotFoundException;
 import com.prince.auth_app.helpers.Userhelper;
 import com.prince.auth_app.repositories.UserRepository;
+import com.prince.auth_app.services.UserService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
