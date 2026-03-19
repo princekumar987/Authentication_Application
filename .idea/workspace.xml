@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65397cd1-be36-4d43-9e94-c9238d10b199" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/Security/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/dtos/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/dtos/responseDtos/ErrorResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/exceptions/GlobalExceptionHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/exceptions/GlobalExceptionHandlers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/services/Impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-app/src/main/java/com/prince/auth_app/services/Impl/AuthServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
