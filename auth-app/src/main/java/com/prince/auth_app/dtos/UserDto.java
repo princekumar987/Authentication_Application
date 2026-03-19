@@ -1,8 +1,6 @@
 package com.prince.auth_app.dtos;
 
 import com.prince.auth_app.entities.Provider;
-import com.prince.auth_app.entities.Role;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
