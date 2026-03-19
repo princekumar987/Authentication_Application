@@ -1,4 +1,4 @@
-package com.prince.auth_app.dtos;
+package com.prince.auth_app.dtos.responseDtos;
 
 import org.springframework.http.HttpStatus;
 
