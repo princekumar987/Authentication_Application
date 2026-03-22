@@ -2,11 +2,12 @@ package com.prince.auth_app.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.prince.auth_app.Security.JwtAuthenticationFilter;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -36,10 +37,12 @@ public class SecurityConfig {
                           .anyRequest().authenticated()
                    )
                 .exceptionHandling(ex->ex.authenticationEntryPoint((request, response,e)->{
-                    e.printStackTrace();
+                    //e.printStackTrace();
                     response.setStatus(401);
                     response.setContentType("application/json");
-                    String message="Unauthorized access "+e.getMessage();
+                    String message= e.getMessage();
+                    String errorMessage= (String) request.getAttribute("error");
+                    if(errorMessage!=null)message=errorMessage;
                     Map<String, String> errormap= Map.of("message",message,"StatusCode",Integer.toString(401));
                     ObjectMapper objectMapper=new ObjectMapper();
                     response.getWriter().write(objectMapper.writeValueAsString(errormap));
@@ -47,6 +50,11 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
+         return configuration.getAuthenticationManager();
     }
     @Bean
     public PasswordEncoder passwordEncoder(){
