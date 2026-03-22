@@ -1,30 +1,50 @@
 package com.prince.auth_app.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.prince.auth_app.Security.JwtAuthenticationFilter;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import java.util.Map;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
-
+    @Autowired
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http.csrf(AbstractHttpConfigurer::disable);
-        http.authorizeHttpRequests( authorizedHttpRequests ->
-                  authorizedHttpRequests.requestMatchers("/api/v1/auth/register").permitAll()
+        http.csrf(AbstractHttpConfigurer::disable)
+                .cors(Customizer.withDefaults())
+                .sessionManagement(sm->sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests( authorizedHttpRequests ->
+                    authorizedHttpRequests.requestMatchers("/api/v1/auth/register").permitAll()
                           .requestMatchers("/api/v1/auth/login").permitAll()
                           .anyRequest().authenticated()
-                  )
-                .httpBasic(Customizer.withDefaults());
+                   )
+                .exceptionHandling(ex->ex.authenticationEntryPoint((request, response,e)->{
+                    e.printStackTrace();
+                    response.setStatus(401);
+                    response.setContentType("application/json");
+                    String message="Unauthorized access "+e.getMessage();
+                    Map<String, String> errormap= Map.of("message",message,"StatusCode",Integer.toString(401));
+                    ObjectMapper objectMapper=new ObjectMapper();
+                    response.getWriter().write(objectMapper.writeValueAsString(errormap));
+                }))
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
